@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shine Animation */
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+/* Floating Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatLeft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatRight {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-float {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(15deg) translateY(-10px);
+  }
+}
+
+.floating-image {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-image-rotate {
+  animation: rotate-float 10s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-right {
+  animation: float-reverse 3s ease-in-out infinite;
+}
+
+.animate-float-left {
+  animation: floatLeft 3s ease-in-out infinite;
+}
+
+/* Cursor */
+.cursor {
+  transition: all 0.3s ease-in-out;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Hover Effects */
+button:hover,
+a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Custom Font */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
+}
