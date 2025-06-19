@@ -1,9 +1,191 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cosmic-particles {
+  background: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.7), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 15s linear infinite;
+  opacity: 0.6;
+}
+@layer utilities {
+  .cursor-custom {
+    cursor: url('/cursors/cursor.png')4 4, auto;
+  }
+}
+.cosmic-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(1px 1px at 50px 60px, rgba(147, 197, 253, 0.8), transparent),
+    radial-gradient(1px 1px at 120px 20px, rgba(236, 72, 153, 0.6), transparent),
+    radial-gradient(2px 2px at 180px 90px, rgba(168, 85, 247, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 250px 120px;
+  animation: sparkle-colored 20s linear infinite reverse;
+}
+
+/* Animations */
+@keyframes sparkle {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-100px) translateX(-50px); }
+}
+
+@keyframes sparkle-colored {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-120px) translateX(30px); }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(10px) translateX(-5px);
+  }
+  50% {
+    transform: translateY(5px) translateX(5px);
+  }
+  75% {
+    transform: translateY(15px) translateX(-3px);
+  }
+}
+
+/* Custom Utility Classes */
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 6s ease-in-out infinite;
+}
+
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+/* Custom Gradients */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #7c3aed, #0891b2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cosmic-particles {
+    background-size: 150px 75px;
+    opacity: 0.3;
+  }
+  
+  .cosmic-particles::before {
+    background-size: 180px 90px;
+  }
+}
+
+/* Loading animation for better performance */
+.cosmic-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.02),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
 /* Shine Animation */
 @keyframes shine {
@@ -95,7 +277,7 @@
   animation: floatLeft 3s ease-in-out infinite;
 }
 
-/* Cursor */
+
 .cursor {
   transition: all 0.3s ease-in-out;
   width: 12px;
@@ -107,14 +289,14 @@
   z-index: 9999;
 }
 
-/* Hover Effects */
+
 button:hover,
 a:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
-/* Custom Font */
+
 .font-great-vibes {
   font-family: 'Great Vibes', cursive;
 }
