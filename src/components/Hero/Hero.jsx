@@ -4,12 +4,14 @@ import { Link } from 'react-scroll';
 import image1 from '../../assets/myfl.png';
 import image2 from '../../assets/myfll.png';
 import About from '../about/about';
+import Project from '../Projects/Project';
+import Skill from '../skills/Skill';
 
 function Hero() {
   return (
     <section
       id="hero"
-      className=" min-h-[300vh] cosmic-bg bg-gradient-to-br from-black via-indigo-950 to-black text-white px-6 relative overflow-hidden"
+      className=" min-h-[500vh] cosmic-bg bg-gradient-to-br from-black via-indigo-950 to-black text-white px-6 relative overflow-hidden"
     >
       <div className="absolute inset-0 cosmic-particles"></div>
       
@@ -113,7 +115,7 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+   
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
@@ -125,9 +127,21 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* About Section - same background */}
-      <div id="about" className="min-h-screen flex items-center justify-center relative">
+     
+      <div id="about" className="min-h-screen flex items-center justify-center relative w-full">
         <About />
+      </div>
+      
+      <div id="projects" className="min-h-screen flex items-center justify-center relative w-full">
+        <Project />
+      </div>
+      <div className="w-full h-[2px] my-16 relative flex items-center justify-center">
+  <div className="w-4/5 h-[2px] bg-white/10 backdrop-blur-sm rounded-full shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+  </div>
+</div>
+
+      <div id="skills" className="min-h-screen flex items-center justify-center relative w-full">
+        <Skill />
       </div>
       
     </section>

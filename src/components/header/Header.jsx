@@ -16,7 +16,7 @@ function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+  
   return (
     <motion.header 
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
@@ -77,7 +77,7 @@ function Header() {
           initial={false}
           animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
         >
-          {['home', 'about', 'projects', 'skills', 'contact'].map((section, index) => (
+          {['hero', 'about', 'projects', 'skills', 'contact'].map((section, index) => (
             <motion.div
               key={section}
               initial={{ opacity: 0, y: -20 }}

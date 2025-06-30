@@ -4,6 +4,12 @@ module.exports = {
   content: [
     './src/**/*.{js,jsx,ts,tsx}', // make sure to include all relevant files
   ],
+   safelist: [
+    'blur-0',
+    'blur-sm',
+    'brightness-100',
+    'brightness-75'
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +17,8 @@ module.exports = {
         dancing: ['Dancing Script', 'cursive'],
         vibes: ['Great Vibes', 'cursive'],
         'great-vibes': ['Great Vibes', 'cursive'], // Added for compatibility
-        'cursive': ['cursive'] // Added for header logo
+        'cursive': ['cursive'], // Added for header logo
+        insta: ['Poppins', 'sans-serif']
       },
       animation: {
         'gradient-shift': 'gradient-shift 3s ease-in-out infinite',
