@@ -3,10 +3,10 @@ import logo from "../assets/logo.png";
 
 function ProjectCard({ title, image, description, tools, github ,demo}) {
   return (
-    <div className="backdrop-blur-xs bg-white/8 border border-blue-500 shadow-blue-950 rounded-2xl
-     w-full max-w-[380px] p-6 shadow-xl text-white flex flex-col gap-4 hover:scale-101 
-     transition-all duration-300 pb-1 hover:border-purple-400 hover:shadow-purple-500/20">
-      
+   <div className="hover-container overflow-visible">
+      <div className="backdrop-blur-xs bg-white/8 border border-blue-500 shadow-blue-950 rounded-2xl
+    w-full max-w-[380px] p-6 shadow-xl text-white flex flex-col gap-4 origin-center
+    hover:scale-105 transition-all duration-300 pb-1 hover:border-purple-400 hover:shadow-purple-500/20">
    
       <img 
         src={image} 
@@ -36,6 +36,7 @@ function ProjectCard({ title, image, description, tools, github ,demo}) {
         </a>
       </div>
     </div>
+  </div>
   );
 }
 

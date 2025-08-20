@@ -77,7 +77,7 @@ function Header() {
           initial={false}
           animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
         >
-          {['hero', 'about', 'projects', 'skills', 'contact'].map((section, index) => (
+          {['home', 'about', 'projects', 'skills', 'contact'].map((section, index) => (
             <motion.div
               key={section}
               initial={{ opacity: 0, y: -20 }}

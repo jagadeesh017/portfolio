@@ -1,7 +1,7 @@
 import React from "react";
 
 import Marquee from "react-fast-marquee";
-// Import React Icons
+
 import {
   FaJava, FaReact, FaGitAlt, FaNodeJs, FaPython, FaPhp,
   FaJsSquare, FaGithub, FaCuttlefish, FaDatabase, FaFigma, FaTools

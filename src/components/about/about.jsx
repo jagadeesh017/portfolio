@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{memo} from 'react';
 import profileImg from "../../assets/profile.jpg";
 
 
@@ -29,7 +29,7 @@ function About() {
 
             {/* Profile Image */}
             <div className="text-center  left-1/12 relative md:pl-45 ">
-              <div className="  w-70 h-74 mx-auto mb-6 rounded-md  ">
+              <div className=" image-hover w-70 h-74 mx-auto mb-6 rounded-md  ">
                 <img
                   src={profileImg}
                   alt="Profile"
@@ -47,4 +47,4 @@ function About() {
   );
 }
 
-export default About;
+export default memo(About);
